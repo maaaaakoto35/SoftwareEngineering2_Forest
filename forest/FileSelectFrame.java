@@ -10,20 +10,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * ファイル選択フレーム。
+ * File Slect Frame
  */
 public class FileSelectFrame extends JFrame implements ActionListener
 {
     /**
-     * 選択したファイルのインスタンスを束縛する。
-     * 良好（2013年7月21日）
+     * a file
      */
     File aFile;
-    
+
     /**
-	 * インスタンスを生成して応答する。
-     * ボタンをパネルに設置し、そのパネルをこのフレームに設置する。
-     * 良好（2013年7月21日）
+     * selecting file frame
      */
     FileSelectFrame()
     {
@@ -38,19 +35,17 @@ public class FileSelectFrame extends JFrame implements ActionListener
         this.getContentPane().add(aPanel, BorderLayout.PAGE_END);
         this.setVisible(true);
     }
-    
+
     /**
-     * 〜〜〜〜〜〜〜する。
-     * また、ファイルが選択された時に呼び出す。
-     * @param anActionEvent アクションイベントのインスタンス
-     * 良好（2013年7月21日）
+     * perfoming
+     * @param anActionEvent action event
      */
     public void actionPerformed(ActionEvent anActionEvent)
     {
         JFileChooser filechooser = new JFileChooser();
-        
+
         int selected = filechooser.showOpenDialog(this);
-        
+
         if (selected == JFileChooser.APPROVE_OPTION)
         {
             this.aFile = filechooser.getSelectedFile();
@@ -65,11 +60,10 @@ public class FileSelectFrame extends JFrame implements ActionListener
             System.out.println("エラー又は取り消しがありました。");
         }
     }
-    
+
     /**
-     * 読み込んだファイルのインスタンスを応答する。
-     * @return ファイルのインスタンス
-     * 良好（2013年7月21日）
+     * getting file
+     * @return a file
      */
     public File getFile()
     {

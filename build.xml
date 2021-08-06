@@ -9,7 +9,7 @@
   <property name="destdir" value="./Classes" />
   <property name="docdir" value="./JavaDoc" />
   <property name="instdir" value="./${ant.project.name}.app/Contents/Resources/Java" />
-  <property name="copyright" value="Copyright 2008-2013 AOKI Atsushi and Tasuku Takahashi. All Right Reserved." />
+  <property name="copyright" value="Copyright 2008-2017 AOKI Atsushi. All Rights Reserved." />
   <property name="zipname" value="${ant.project.name}" />
 
   <tstamp>
@@ -31,7 +31,7 @@
       fork="true"
       srcdir="${basedir}"
       destdir="${destdir}"
-      includeAntRuntime="true" 
+      includeAntRuntime="true"
       encoding="UTF-8"
       deprecation="on"
       verbose="false">

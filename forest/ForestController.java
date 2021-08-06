@@ -5,23 +5,21 @@ import java.awt.Point;
 import mvc.Controller;
 
 /**
- * フォレストコントローラ。
+ * Forest Controller
  */
 public class ForestController extends Controller
 {
 	/**
-	 * フォレストコントローラのコンストラクタ。
-	 * 良好（2013年7月21日）
+	 * construct
 	 */
 	public ForestController()
 	{
 		super();
 	}
-	
+
 	/**
-	 * マウスクリックした位置の木の要素（文字列）を出力する。
-     * @param aMouseEvent マウスイベントのインスタンス
-     * 良好（2013年7月21日）
+	 * getting str for clicking mouse
+     * @param aMouseEvent mouse event
 	 */
 	public void mouseClicked(MouseEvent aMouseEvent)
 	{
@@ -31,11 +29,10 @@ public class ForestController extends Controller
 		aForestModel.mouseClicked(aPoint, aMouseEvent);
 		return;
 	}
-    
+
     /**
-	 * ダブルバッファのpicture画像を基に、木全体を全体を動かす。
-     * @param aMouseEvent マウスイベントのインスタンス
-     * 良好（2013年7月21日）
+	 * dragging mousse
+     * @param aMouseEvent mouse event
 	 */
     public void mouseDragged(MouseEvent aMouseEvent)
 	{

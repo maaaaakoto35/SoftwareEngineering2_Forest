@@ -9,29 +9,27 @@ import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
- * 例題プログラム。
+ * example
  */
 public class Example extends Object
 {
 	/**
-     * ファイルをセットし、ユーザにファイル選択を要求し、選択されたテキストファイルをモデルへと渡し、MVCの各インスタンスを生成する。その後フレームを生成し、MVCを乗せる。そして、樹上整列するアニメーションを開始する。
-     * バグ（2013年6月10日）
-     * 良好（2013年7月21日）
+     * main
 	 */
 	public static void main(String[] arguments) throws IOException
 	{
         FileSelectFrame aFrame = new FileSelectFrame();
         File aFile = null;
         aFrame.setLocation(0,0);
-        
+
         while(aFile == null){
             aFile = aFrame.getFile();
             System.out.print("");
         }
-		
+
         ForestModel aModel = new ForestModel(aFile);
 		ForestView aView = new ForestView(aModel,new ForestController());
-        
+
         JFrame aWindow = new JFrame("Forest");
         aWindow.getContentPane().add(aView);
         aWindow.setLayout(null);
@@ -45,13 +43,13 @@ public class Example extends Object
 		aWindow.setLocation(0, 0);
 		aWindow.setVisible(true);
 		aWindow.toFront();
-		
+
         ArrayList<Node> roots = aModel.getForest().getRoot();
         for(Node node : roots)
         {
             aModel.getForest().visit(node, new Point(0,Forest.underLine) );
         }
-        
+
 		return;
 	}
 }

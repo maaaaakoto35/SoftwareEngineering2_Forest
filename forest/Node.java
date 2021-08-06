@@ -10,41 +10,34 @@ import javax.swing.JLabel;
 public class Node extends JLabel
 {
     /**
-     * ノードの番号（数字）を束縛する。
-     * 良好（2013年7月21日）
+     * node num
      */
 	private int nodeNumber;
-    
+
     /**
-     * ノードの名前（文字列）を束縛する。
-     * 良好（2013年7月21日）
+     * node name
      */
     private String nodeName;
-    
+
     /**
-     * ノードの親インスタンスを束縛する。
-     * 良好（2013年7月21日）
+     * node parent
      */
     private Node parent;
-    
+
     /**
-     * ノードの子インスタンスたちを束縛する。
-     * 良好（2013年7月21日）
+     * node chidlen
      */
     private ArrayList<Node> children;
-    
+
     /**
-     * 探索済みか否かを束縛する。
-     * 良好（2013年7月21日）
+     * visit
      */
     private boolean visit;
-    
+
     /**
-	 * インスタンスを生成して応答する。
-     * ノードの番号、名前を設定し、このコンポーネントのフォント、テキスト、サイズ、ボーダーを設定する。
-     * @param number ノードの番号
-     * @param name ノードの名前
-     * 良好（2013年7月21日）
+	 * make instance
+     * @param number node num
+     * @param name node namve
      */
     Node(int number, String name)
     {
@@ -53,68 +46,62 @@ public class Node extends JLabel
         this.parent = null;
         this.children = new ArrayList<Node>();
         this.visit = false;
-        
+
 		this.setFont(new Font("Arial", Font.PLAIN, 12));
         this.setText(this.nodeName);
 		this.setBorder(new LineBorder(Color.black, 1));
         this.setSize(this.getPreferredSize());
     }
-    
+
     /**
-     * ノードの番号（数字）を応答する。
-     * @return ノードの番号
-     * 良好（2013年7月21日）
+     * getting node num
+     * @return node num
      */
     public int getNumber()
     {
         return this.nodeNumber;
     }
-    
+
     /**
-     * ノードの名前（文字列）を応答する。
-     * @return ノードの名前
-     * 良好（2013年7月21日）
+     * getting node name
+     * @return node name
      */
     public String getName()
     {
         return this.nodeName;
     }
-    
+
     /**
-     * 親ノードのインスタンスを応答する。
-     * @return 親ノードのインスタンス
-     * 良好（2013年7月21日）
+     * getting node parent
+     * @return node parent
      */
     public Node getParent()
     {
         return this.parent;
     }
-    
+
     /**
-     * 子ノードのインスタンスたちを応答する。
-     * @return 子ノードのインスタンスたち
-     * 良好（2013年7月21日）
+     * getting children
+     * @return node children
      */
     public ArrayList<Node> getChildren()
     {
         return this.children;
     }
-    
+
     /**
-     * 親ノードのインスタンスを設定する。
-     * @param aNode 親ノードのインスタンス
-     * 良好（2013年7月21日）
+     * setting node parent
+     * @param aNode node parent
      */
     public void setParent(Node aNode)
     {
         this.parent = aNode;
         return;
     }
-    
+
     /**
-     * 子ノードのインスタンスを設定する。
-     * @param aNode 子ノードのインスタンス
-     * 良好（2013年7月21日）
+     * setting node children
+     * @param aNode node children
      */
     @SuppressWarnings("unchecked")
     public void setChildren(Node aNode)
@@ -123,20 +110,18 @@ public class Node extends JLabel
         Collections.sort(this.children, new NodeComparator()); //辞書順にソート
         return;
     }
-    
+
     /**
-     * 探索状態を設定する。
-     * 良好（2013年7月21日）
+     * setting visit
      */
     public void setVisit(boolean flag)
     {
         this.visit = flag;
         return;
     }
-    
+
     /**
-     * 探索済みか応答する。
-     * 良好（2013年7月21日）
+     * getting visit
      */
     public boolean getVisit()
     {
@@ -145,16 +130,15 @@ public class Node extends JLabel
 }
 
 /**
- * 辞書順ソートのための内部クラス
+ * for sort
  */
 @SuppressWarnings("rawtypes")
 class NodeComparator implements java.util.Comparator {
     /**
-     * 辞書順ソートするコンパレータ
-     * @param node1 比較するNode
-     * @param node2 比較するNode
-     * @return 大小関係を表す値
-     * 良好（2013年7月21日）
+     * compare
+     * @param node1 node
+     * @param node2 node
+     * @return result
      */
 	public int compare(Object node1, Object node2) {
 		//               + (x > y)

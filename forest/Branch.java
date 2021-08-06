@@ -1,49 +1,43 @@
 package forest;
 
 /*
- * Branchクラス
+ * Branch
  */
 public class Branch extends Object
 {
     /**
-     * 枝にくっついている親ノードをインスタンスとして束縛する。
-     * 良好（2013年7月21日）
+     * parent node
      */
     private Node parentNode;
-    
+
     /**
-     * 枝にくっついている子ノードをインスタンスとして束縛する。
-     * 良好（2013年7月21日）
+     * child node
      */
     private Node childNode;
-    
+
     /**
-     * インスタンスを生成して応答する。
-     * 引数に親Node,子Nodeを指定し、フィールドに設定する
-     * @param parentNode 親Node
-     * @param childNode 子Node
-     * 良好（2013年7月21日）
+     * getting branch
+     * @param parentNode parent node
+     * @param childNode child node
      */
     Branch(Node parentNode, Node childNode)
     {
         this.parentNode = parentNode;
         this.childNode = childNode;
     }
-    
+
     /**
-     * 親ノードを応答する。
-     * @return 親ノード
-     * 良好（2013年7月21日）
+     * getting parent node
+     * @return parent node
      */
     public Node getParentNode()
     {
         return this.parentNode;
     }
-    
+
     /**
-     * 子ノードを応答する。
-     * @return 子ノード
-     * 良好（2013年7月21日）
+     * getting child node
+     * @return childe node
      */
     public Node getChildNode()
     {
